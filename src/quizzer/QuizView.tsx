@@ -12,14 +12,14 @@ export const QuizView = ({
     resetView
 }: {
     quiz: Quiz;
-    editQuiz: (quizId: number, newQuiz: string) => void;
+    editQuiz: (quizId: number, newQuiz: Quiz) => void;
     deleteQuiz: (quizId: number) => void;
     resetView: () => void;
 }) => {
     const [edit, setEdit] = useState(false);
 
     const switchEdit = () => {
-        setEdit(edit);
+        setEdit(!edit);
     };
 
     return (

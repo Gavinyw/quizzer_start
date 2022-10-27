@@ -13,7 +13,7 @@ export const QuizExpanded = ({
     switchEdit
 }: {
     quiz: Quiz;
-    editQuiz: (quizId: number, newQuiz: string) => void;
+    editQuiz: (quizId: number, newQuiz: Quiz) => void;
     resetView: () => void;
     switchEdit: () => void;
 }) => {
@@ -34,7 +34,7 @@ export const QuizExpanded = ({
     };
 
     const totalPoints = filteredQuestions.reduce(
-        (prev: number, q: Question): number => prev + q.p,
+        (prev: number, q: Question): number => prev + q.points,
         0
     );
 
